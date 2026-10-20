@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 · 阅微 Yuewei</title>
+<style>
+  :root { --ink: #1f2430; --muted: #6b7280; --line: #e8ecf3; --brand: #4f46e5; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 15px; line-height: 1.85; color: var(--ink);
+    background: #fbfcfe;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 96px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 22px; margin-bottom: 34px; }
+  h1 { font-size: 27px; margin: 0 0 8px; letter-spacing: -.3px; }
+  .meta { font-size: 13px; color: var(--muted); }
+  h2 {
+    font-size: 18px; margin: 40px 0 12px;
+    padding-left: 11px; border-left: 3px solid var(--brand);
+    line-height: 1.4;
+  }
+  h3 { font-size: 15px; margin: 24px 0 8px; color: #374151; }
+  p, li { color: #374151; }
+  ul, ol { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  th, td { border: 1px solid var(--line); padding: 10px 13px; text-align: left; vertical-align: top; }
+  th { background: #f6f8fb; font-weight: 700; }
+  code {
+    background: #f1f4f9; padding: 2px 6px; border-radius: 4px;
+    font-size: 13px; font-family: ui-monospace, Menlo, Consolas, monospace;
+  }
+  .callout {
+    background: #eef2ff; border: 1px solid #ddd6fe;
+    border-radius: 10px; padding: 15px 18px; margin: 20px 0;
+    font-size: 14.5px;
+  }
+  .callout b { color: #4338ca; }
+  a { color: var(--brand); }
+  hr { border: none; border-top: 1px solid var(--line); margin: 44px 0; }
+  .en { color: #4b5563; }
+  .en h2 { border-left-color: #94a3b8; }
+  footer { margin-top: 48px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>隐私政策</h1>
+  <div class="meta">
+    适用产品：阅微 Yuewei — 网页读薄器（Chrome 扩展程序）<br>
+    最后更新：2026 年 10 月 19 日 · 生效日期：2026 年 10 月 19 日
+  </div>
+</header>
+
+<div class="callout">
+  <b>一句话总结：</b>阅微没有自己的服务器。我们不收集、不上传、不存储你的任何数据。
+  你阅读的网页正文会从你的浏览器直接发送到<b>你自己选择的 AI 服务商</b>，用的是<b>你自己的 API Key</b>。
+  除此之外，没有任何人（包括我们）能看到你读了什么。
+</div>
+
+<h2>一、我们是谁</h2>
+<p>
+  阅微（下称"本扩展"）是一款运行在 Google Chrome 浏览器上的扩展程序，用于把网页文章提炼成简短摘要与要点。
+  本政策的发布者是本扩展的开发者（下称"我们"）。
+  如有任何隐私相关问题，可通过文末的联系方式与我们联系。
+</p>
+
+<h2>二、本扩展处理哪些数据</h2>
+
+<h3>2.1 网页内容（仅在您主动点击时）</h3>
+<p>
+  当您点击"30 秒读完"按钮时，本扩展会读取<b>当前标签页</b>的正文内容（包括标题、正文文本、网址、网站域名）。
+  这通过 Chrome 的 <code>activeTab</code> 权限实现——该权限<b>只在你主动点击扩展图标后</b>才对这个标签页生效，
+  本扩展<b>无法</b>在你没有操作时读取任何网页。
+</p>
+<p>
+  读取到的正文会直接从你的浏览器发送给你所选择的 AI 服务商（见第 3 节），用于生成摘要。
+  <b>我们不会收到、也不会留存这份内容。</b>
+</p>
+
+<h3>2.2 API Key</h3>
+<p>
+  你需要自行填写一个 AI 服务商的 API Key 才能使用本扩展。该 Key：
+</p>
+<ul>
+  <li>存储在<b>你本机的浏览器存储</b>（<code>chrome.storage.local</code>）中；</li>
+  <li><b>不会</b>同步到你的 Google 账号，<b>不会</b>上传到任何服务器，我们也无法获取；</li>
+  <li>仅用于向对应服务商的 API 发起请求，作为身份凭证。</li>
+</ul>
+
+<h3>2.3 偏好设置</h3>
+<p>
+  模型供应商、模型名称、笔记风格等设置项，保存在 <code>chrome.storage.sync</code> 中，
+  以便在你登录同一 Google 账号的多个设备间同步。<b>这类数据不包含 API Key，也不包含任何网页内容。</b>
+</p>
+
+<h3>2.4 收藏记录</h3>
+<p>
+  当你使用"收藏到收藏墙"功能时，该文章的标题、网址、摘要与收藏时间会保存在
+  <b>你本机的浏览器存储</b>（<code>chrome.storage.local</code>）中，用于在"收藏墙"页面展示。
+  这些数据<b>不会</b>上传，也<b>不会</b>跨设备同步。
+</p>
+
+<h3>2.5 我们不收集的数据</h3>
+<p>本扩展<b>明确不收集</b>以下任何信息：</p>
+<ul>
+  <li>你的姓名、电子邮箱、电话号码或任何账号信息</li>
+  <li>你的浏览历史、书签、Cookie、密码或表单内容</li>
+  <li>你的地理位置、IP 地址或设备标识符</li>
+  <li>键盘输入、鼠标行为或其他使用行为埋点</li>
+  <li>任何用于广告投放或用户画像的标识符</li>
+</ul>
+
+<h2>三、数据会发送到哪里</h2>
+<p>
+  本扩展本身<b>没有后端服务器</b>。当你点击提炼时，网页正文会从你的浏览器
+  <b>直接</b>发送到你在设置中选择的 AI 服务商。我们对这些请求没有任何中转、记录或访问能力。
+</p>
+<p>当前支持的服商及其隐私政策：</p>
+
+<table>
+  <tr>
+    <th>服务商</th>
+    <th>接口地址</th>
+    <th>隐私政策</th>
+  </tr>
+  <tr>
+    <td>智谱 AI（默认，免费）</td>
+    <td><code>open.bigmodel.cn</code></td>
+    <td><a href="https://open.bigmodel.cn/static/agreement/privacyPolicy.html" target="_blank" rel="noopener">智谱 AI 隐私政策</a></td>
+  </tr>
+  <tr>
+    <td>DeepSeek</td>
+    <td><code>api.deepseek.com</code></td>
+    <td><a href="https://platform.deepseek.com/downloads/DeepSeek Privacy Policy.html" target="_blank" rel="noopener">DeepSeek 隐私政策</a></td>
+  </tr>
+  <tr>
+    <td>阿里云灵积（通义千问）</td>
+    <td><code>dashscope.aliyuncs.com</code></td>
+    <td><a href="https://help.aliyun.com/document_detail/196912.html" target="_blank" rel="noopener">阿里云隐私政策</a></td>
+  </tr>
+  <tr>
+    <td>OpenAI</td>
+    <td><code>api.openai.com</code></td>
+    <td><a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">OpenAI Privacy Policy</a></td>
+  </tr>
+</table>
+
+<p>
+  <b>请注意：</b>这些第三方服务商如何存储、使用你发送的内容，由它们各自的隐私政策约束，我们无法控制。
+  如果你阅读的是敏感内容，建议先确认所选服务商的数据处理条款，或选择你信任的服务商。
+</p>
+
+<h2>四、数据共享与出售</h2>
+<p>
+  我们<b>不</b>出售你的任何数据，<b>不</b>将数据用于广告、用户画像或信用评估，
+  <b>不</b>向任何第三方转让数据（唯一的第三方传输即第 3 节所述的、由你主动触发并由你选择服务商的 AI 接口）。
+</p>
+
+<h2>五、数据保留与删除</h2>
+<ul>
+  <li><b>自动删除：</b>清理浏览器扩展数据、卸载本扩展，即可删除本扩展存储的全部内容。</li>
+  <li><b>手动删除：</b>收藏墙页面提供单条删除与"清空"按钮；设置页可随时清空 API Key。</li>
+  <li><b>服务器端：</b>由于我们没有服务器，<b>不存在</b>需要申请删除的服务端数据。</li>
+</ul>
+
+<h2>六、数据安全</h2>
+<ul>
+  <li>所有网络请求均通过 <b>HTTPS</b> 加密传输。</li>
+  <li>API Key 仅存储于本机，不跨设备同步，降低凭证泄露风险。</li>
+  <li>本扩展不加载、不执行任何远程代码，所有逻辑随扩展包一同分发。</li>
+  <li>扩展申请的是 Chrome 的<b>最小必要权限</b>，未申请读取全部网站（<code>&lt;all_urls&gt;</code>）、
+      Cookie、历史记录等高敏权限。</li>
+</ul>
+
+<h2>七、儿童隐私</h2>
+<p>
+  本扩展不面向 13 岁以下儿童，也不会主动收集儿童的任何个人信息。
+</p>
+
+<h2>八、符合 Chrome 应用商店"有限使用"要求</h2>
+<p>
+  本扩展对用户数据的处理符合 Chrome 应用商店用户数据政策中的"有限使用"（Limited Use）要求，具体包括：
+</p>
+<ul>
+  <li>仅在实现扩展<b>单一用途</b>（网页内容提炼）所必需时传输数据；</li>
+  <li>不将数据传输用于广告、个性化推荐或任何与单一用途无关的目的；</li>
+  <li>不将数据用于判断信用等级或用于放贷；</li>
+  <li>不向第三方出售数据；</li>
+  <li>除法律要求外，不向任何第三方披露数据——且本扩展本身不持有可披露的数据。</li>
+</ul>
+
+<h2>九、政策变更</h2>
+<p>
+  若本政策发生实质性变更，我们会在本页面更新"最后更新"日期，并在扩展的更新说明中提示。
+  继续使用本扩展即视为接受更新后的政策。
+</p>
+
+<h2>十、联系我们</h2>
+<p>
+  对本政策有任何疑问，或希望行使数据相关权利，请通过以下方式联系：<br>
+  邮箱：<b>wangliran@live.cn</b>
+</p>
+
+<hr>
+
+<!-- ================= 英文版 ================= -->
+<div class="en">
+  <h1 style="font-size:24px">Privacy Policy</h1>
+  <div class="meta" style="margin-bottom:28px">
+    Product: Yuewei — Read Less, Know More (Chrome Extension)<br>
+    Last updated: October 20, 2026
+  </div>
+
+  <div class="callout">
+    <b>In one sentence:</b> Yuewei has no backend server. We do not collect, upload, or store any of your data.
+    Article text is sent directly from your browser to the AI provider <b>you</b> chose, using <b>your</b> API key.
+  </div>
+
+  <h2>1. What This Extension Processes</h2>
+
+  <h3>1.1 Web page content (only when you click)</h3>
+  <p>
+    When you click the "Read in 30s" button, the extension reads the main text of the <b>current tab</b>
+    (title, body text, URL, and domain). This uses Chrome's <code>activeTab</code> permission, which only
+    applies to a tab <b>after you explicitly click the extension icon</b>. The extension cannot read any
+    page without your action.
+  </p>
+  <p>
+    The extracted text is sent directly from your browser to the AI provider you selected, in order to
+    generate a summary. <b>We never receive or retain this content.</b>
+  </p>
+
+  <h3>1.2 API key</h3>
+  <ul>
+    <li>Stored locally in <code>chrome.storage.local</code> on your device;</li>
+    <li><b>Not</b> synced to your Google account, <b>not</b> uploaded anywhere, and inaccessible to us;</li>
+    <li>Used solely as the credential for requests to your chosen provider.</li>
+  </ul>
+
+  <h3>1.3 Preferences</h3>
+  <p>
+    Provider, model, and note-style settings are stored in <code>chrome.storage.sync</code> so they can
+    follow your Google account across devices. <b>These contain no API key and no page content.</b>
+  </p>
+
+  <h3>1.4 Saved articles</h3>
+  <p>
+    When you use "Save to Library", the article's title, URL, summary, and save time are stored locally in
+    <code>chrome.storage.local</code> for display on the Library page. This data is never uploaded or synced.
+  </p>
+
+  <h3>1.5 What we do NOT collect</h3>
+  <p>
+    We do not collect your name, email, phone number, account information, browsing history, bookmarks,
+    cookies, passwords, form data, location, IP address, device identifiers, keystrokes, or behavioral analytics.
+    We use no advertising or user-profiling identifiers.
+  </p>
+
+  <h2>2. Where Data Is Sent</h2>
+  <p>
+    This extension has <b>no backend server</b>. When you trigger a summary, the article text is sent
+    <b>directly</b> from your browser to the AI provider selected in settings. We cannot intercept, log, or
+    access these requests.
+  </p>
+  <p>
+    Supported providers and their privacy policies: Zhipu AI (default, free), DeepSeek, Alibaba Cloud
+    DashScope (Qwen), and OpenAI. Links are provided in the Chinese section above.
+  </p>
+  <p>
+    <b>Note:</b> How these third parties store and use your content is governed by their own privacy policies
+    and is outside our control. If you are reading sensitive material, please review the provider's terms first.
+  </p>
+
+  <h2>3. Data Sharing and Sale</h2>
+  <p>
+    We do not sell your data, do not use it for advertising, profiling, or credit assessment, and do not
+    transfer it to any third party other than the AI endpoint you deliberately invoke.
+  </p>
+
+  <h2>4. Data Retention and Deletion</h2>
+  <ul>
+    <li><b>Automatic:</b> Clearing extension data or uninstalling the extension deletes everything it stored.</li>
+    <li><b>Manual:</b> The Library page offers per-item delete and a "Clear all" button; the settings page lets you clear your API key at any time.</li>
+    <li><b>Server-side:</b> Since we operate no servers, there is no server-side data to request deletion of.</li>
+  </ul>
+
+  <h2>5. Security</h2>
+  <ul>
+    <li>All network requests use <b>HTTPS</b>.</li>
+    <li>API keys are stored locally only and are not synced across devices.</li>
+    <li>The extension loads and executes <b>no remote code</b>; all logic ships with the package.</li>
+    <li>Only minimum necessary Chrome permissions are requested — no <code>&lt;all_urls&gt;</code>, cookies, or history access.</li>
+  </ul>
+
+  <h2>6. Children's Privacy</h2>
+  <p>This extension is not directed to children under 13 and does not knowingly collect their personal information.</p>
+
+  <h2>7. Chrome Web Store Limited Use Compliance</h2>
+  <p>
+    Our handling of user data complies with the Chrome Web Store User Data Policy, including the Limited Use
+    requirements: data is transferred only as necessary for the extension's <b>single purpose</b>; it is not used
+    for advertising, personalization, or creditworthiness; it is not sold; and it is not disclosed to third
+    parties except as required by law — and the extension itself holds no data to disclose.
+  </p>
+
+  <h2>8. Changes</h2>
+  <p>
+    If this policy changes materially, we will update the "Last updated" date above and note it in the
+    extension's release notes. Continued use constitutes acceptance of the updated policy.
+  </p>
+
+  <h2>9. Contact</h2>
+  <p>For any questions about this policy: <b>wangliran@live.cn</b></p>
+</div>
+
+<footer>
+  阅微 Yuewei · 本页面为 Chrome 扩展程序的官方隐私政策页面。<br>
+  This page serves as the official privacy policy for the Yuewei Chrome extension.
+</footer>
+
+</div>
+</body>
+</html>
